@@ -1,43 +1,1163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1EyeMedia - Wedding & Photography</title>
-  <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
-    header { background: #000; color: #fff; padding: 20px; text-align: center; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
-    .hero { background: url('wedding-hero.jpg') no-repeat center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
-    .hero h1 { font-size: 3rem; }
-    .cta-button { background: #ff6f61; color: #fff; padding: 10px 20px; border: none; cursor: pointer; }
-    .services, .portfolio, .testimonials, .contact { padding: 50px 20px; text-align: center; }
-    footer { background: #000; color: #fff; text-align: center; padding: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code2Nuage Infotech | Innovation for the Future</title>
+    <link rel="icon" href="./pic/logo.jpg" type="image/jpeg">
+    <meta name="description" content="Code2Nuage Infotech is dedicated to innovation, collaboration, inclusivity, and sustainability. We drive digital transformation with a commitment to integrity and work-life balance.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #343a40;
+        }
+        .navbar-brand img {
+            max-height: 50px;
+        }
+        .jumbotron {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 100px 25px;
+        }
+        .carousel-item {
+            height: 65vh;
+            min-height: 300px;
+            background: no-repeat center center scroll;
+            background-size: cover;
+        }
+        .carousel-caption {
+            bottom: 220px;
+        }
+        .carousel-caption h5 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .carousel-caption p {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .section-title {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .service-box {
+            margin-bottom: 20px;
+        }
+        .service-box img {
+            width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .section-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #e74c3c;
+            margin: 10px auto;
+        }
+
+        .section-title span {
+            display: inline-block;
+            background: linear-gradient(to right, #e74c3c, #8e44ad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title:hover {
+            color: #e74c3c;
+            transition: color 0.3s ease-in-out;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #f8f9fa;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .btn a:hover {
+            text-decoration: none;
+        }
+        .txt {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .s-txt-a {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .txt a {
+            text-decoration: none;
+            color: #f8f9fa;
+        }
+        .carousel-caption h5 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+            color: #ecf0f1;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .img-bx img {
+    width: 90%;
+    height: 90%;
+}
+.img-bx1 img{
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+     
+    }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .img-bx img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .img-bx1 img{
+      width: auto;
+        
+        padding-top: 0!important;
+    }
+}
+/* about section */
+.hero {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .txt-bx {
+            flex: 1 1 50%;
+            padding: 20px;
+        }
+        .txt-bx h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .txt-bx .btn-primary {
+            margin-top: 20px;
+        }
+        .img-bx {
+            flex: 1 1 40%;
+            padding: 20px;
+        }
+        .img-bx img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .vision-box-outter {
+            padding: 15px;
+        }
+        .vision-block {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        .vision-block figure {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .vision-block img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain; /* Ensures the image scales correctly */
+        }
+        @media (max-width: 768px) {
+            .txt-bx, .img-bx {
+                flex: 1 1 100%;
+                text-align: center;
+                padding: 10px;
+            }
+            .txt-bx h1 {
+                font-size: 2rem;
+            }
+        }
+        .Service-icon-box {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .modal-title {
+            color: #333;
+            font-weight: bold;
+        }
+        .modal-body {
+            background-color: #f4f4f4;
+        }
+        .form-check-label {
+            color: #555;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-outline-success {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-outline-success:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>1EyeMedia</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <div>
-      <h1>Capturing Your Special Moments – Forever.</h1>
-      <button class="cta-button">Book Now</button>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> <img src="./pic/logo.jpg" alt="Code2Nuage Infotech"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" onclick="showHomePage()" href="#" style="text-decoration: none; color: #007bff; font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold;">Code2Nuage Infotech</a>
+
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active" onclick="showAboutPage()">
+              <a class="nav-link dropdown-toggle" href="#" style="text-decoration: none; color: #333; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 10px 15px; border-radius: 5px; background-color: #f0f0f0; transition: background-color 0.3s ease;"><span class="sr-only">(current)</span>About</a>
+
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none; color: #333; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 10px 15px; border-radius: 5px; background-color: #f0f0f0; transition: background-color 0.3s ease;">
+                    Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Web Development</a>
+                    <a class="dropdown-item" href="#">UI UX Design</a>
+                    <a class="dropdown-item" href="#">Cloud Services</a>
+                    <a class="dropdown-item" href="#">Devops Solution</a>
+                    <a class="dropdown-item" href="#">Mobile App Development</a>
+                    <a class="dropdown-item" href="#">Software Testing</a>
+                </div>
+            </li>
+         
+
+            <li class="nav-item">
+              
+              <a class="nav-link dropdown-toggle" href="#" style="text-decoration: none; color: #333; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 10px 15px; border-radius: 5px; background-color: #f0f0f0; transition: background-color 0.3s ease;">Contact</a>
+
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" style="padding-right: 3%;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#applyNowModal">
+                <span class="cus-nav">Apply Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+            </button>
+         </form>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#ContactUsModal">Contact Us</button>
+          </form>
+           <!-- Modal apply now-->
+    <div class="modal fade" id="applyNowModal" tabindex="-1" aria-labelledby="applyNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyNowModalLabel">Apply Now</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Phone Number</label>
+                            <input type="text" class="form-control" id="Phone" placeholder="Enter your Phone No">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">College</label>
+                            <input type="email" class="form-control" id="College" placeholder="Enter your College">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position you are applying for</label>
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="fresher" value="Fresher">
+                                    <label class="form-check-label" for="fresher">I am a Fresher</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="softwareDev" value="Software Development">
+                                    <label class="form-check-label" for="softwareDev">Software Development</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="devOps" value="DevOps">
+                                    <label class="form-check-label" for="devOps">DevOps</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="testAutomation" value="Test Automation">
+                                    <label class="form-check-label" for="testAutomation">Test Automation</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="performanceEngineering" value="Performance Engineering">
+                                    <label class="form-check-label" for="performanceEngineering">Performance Engineering</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="securityTesting" value="Security Testing">
+                                    <label class="form-check-label" for="securityTesting">Security Testing</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="accessibilityTesting" value="Accessibility Testing">
+                                    <label class="form-check-label" for="accessibilityTesting">Accessibility Testing</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="manualFunctionalAPI" value="Manual Functional + API Testing">
+                                    <label class="form-check-label" for="manualFunctionalAPI">Manual Functional + API Testing</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="manualFunctional" value="Manual Functional Testing">
+                                    <label class="form-check-label" for="manualFunctional">Manual Functional Testing</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="hrGeneralist" value="HR Generalist">
+                                    <label class="form-check-label" for="hrGeneralist">HR Generalist</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="talentAcquisition" value="Talent Acquisition">
+                                    <label class="form-check-label" for="talentAcquisition">Talent Acquisition</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="businessDevelopment" value="Business Development">
+                                    <label class="form-check-label" for="businessDevelopment">Business Development</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="itSales" value="IT Sales (Services)">
+                                    <label class="form-check-label" for="itSales">IT Sales (Services)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" id="marketing" value="Marketing">
+                                    <label class="form-check-label" for="marketing">Marketing</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Skills and technology</label>
+                            <textarea class="form-control" id="Skills"  placeholder="Plese write your skills"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+   
     </div>
+    <!-- Modal Contact Us-->
+    <div class="modal fade" id="ContactUsModal" tabindex="-1" aria-labelledby="ContactUsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ContactUsModalLabel">Need to drop an enquiry?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+        </div>
+      </nav>
+    
+      <!--Home section-->
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('./pic/pexels-fauxels-3184358.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>We believe in knowledge sharing & thought leadership</h5>
+                    <p style="margin-bottom: -5%;">Recognized by experts and loved by the industry. Leverage our open source utilities, technology blogs, and much more...</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./pic/code-8779051_1280.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Strategic Insights</h5>
+                    <p>We make Possibilities Reimagined</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./pic/pexels-divinetechygirl-1181671.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Innovative Solutions</h5>
+                    <p>Driving digital transformation and innovation</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container " id="Home-page">
+        
+        <div class="container">
+
+          <div class="row no-gutters">
+              <div class="col-12 col-md-6 img-bx ">
+                  <img src="./pic/pexels-olia-danilevich-4974914.jpg" class="img-fluid mt-5 pt-5" style="" alt="software developers">
+              </div>
+
+              <div class="about-content col d-flex flex-column justify-content-center">
+                  <h2 class="section-title">
+                      Know <span class="s-txt-b">About</span> us
+                  </h2>
+                  <div class="txt">
+                      <span class="s-txt-a">Code2Nuage Infotech</span>  is a premier provider of cutting-edge Information Technology solutions, specializing in custom software development tailored to meet our clients' unique needs. Committed to continuous innovation and leveraging the latest technological advancements, we deliver exceptional services in the ever-evolving digital landscape. Our core expertise lies in developing high-quality web,cloud and mobile applications designed to drive success in the modern world.<br>
+                      <div class="btn btn-primary mt-5 rounded-pill" >
+                          <a style="color: #f8f9fa;" href="/About">About Us</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <h2 class="section-title mt-5 pt-5">Choose us for exceptional <span class="s-txt-b">Services</span> that exceed expectations</h2>
+      <div class="container">
+
+        <div class="row no-gutters">
+          
+
+            <div class="about-content col d-flex flex-column justify-content-center">
+               
+                <div class="txt">
+                    <span class="s-txt-a">Code2Nuage Infotech</span>  Our suite of services encompasses comprehensive cloud solutions, brand assurance, expert software development, data engineering, strategic IT consulting, dependable IT support, and more. Whether you're looking to harness the power and efficiency of the cloud, protect your brand’s reputation, create bespoke software, enhance your IT infrastructure, or receive continuous IT assistance, our dedicated team is here to support you every step of the way..<br>
+                    <div class="btn btn-primary  rounded-pill" style="float: right;">
+                        <a style="color: #f8f9fa; " href="/About">Services </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 img-bx1 ">
+              <img src="./pic/freelance-work.png" class="img-fluid mt-5 pt-5" style="" alt="software developers">
+          </div>
+        </div>
+    </div>
+    </div>
+  <!--Home section-->
+  <!--ABOUT-->
+
+  <div class="page-about" id="pageName" data-nav-link="About">
+
+
+    <section id="hero" class="hero">
+      <div class="hero-container mt-5 sub-pg container-fluid d-flex align-items-center justify-content-between px-xs-0">
+          <div class="txt-bx">
+              <h1><span class="s-txt-a">Redefining </span>Success  in the Digital Age.</h1>
+              <a class="btn btn-primary" href="#aboutDescSec">About</a>
+          </div>
+          <div class="img-bx">
+              <img src="./pic/pexels-olia-danilevich-4974914.jpg" alt="Software Developers">
+          </div>
+      </div>
   </section>
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <p>Wedding Photography, Pre-Wedding Shoots, Portraits, and more.</p>
-  </section>
-  <footer>
-    <p>&copy; 2023 1EyeMedia. All rights reserved.</p>
+
+    <!-- about-desc-sec -->
+    <section id="aboutDescSec" class="container about-desc-sec">
+      <h1 class="sec-heading aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-duration="500" style="font-size: 3rem; color: #333; display: flex; justify-content: center; align-items: center;height: 10vh;text-align: center;">
+        <span class="s-txt-b" style="color: #007bff;">About</span><span> us</span>
+    </h1>
+        <p class="txt aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-duration="500" data-aos-delay="200">
+          Code2Nuage Infotech  is a premier provider of cutting-edge Information Technology solutions, specializing in custom software development tailored to meet our clients' unique needs. Committed to continuous innovation and leveraging the latest technological advancements, we deliver exceptional services in the ever-evolving digital landscape. Our core expertise lies in developing high-quality web,cloud and mobile applications designed to drive success in the modern world.<br>
+
+        </p>
+    </section>
+
+    <!-- agile-sec -->
+    <section class="container agile-sec">
+        <div class="row">
+            <div class="col">
+              <h1 class="sec-heading aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-duration="500" style="font-size: 3rem; color: #333; display: flex; justify-content: center; align-items: center;height: 10vh;text-align: center;">
+                <span class="s-txt-b" style="color: #007bff;">Our</span><span> Mission</span>
+            </h1>
+                <div class="img-bx aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-duration="500">                 
+                    <div class="txt">
+                      We aim to become the premier revenue enhancement platform for the IT industry, delivering a unified technology solution to help our clients boost their revenue through effective customer acquisition, retention, and wallet share expansion.
+                    </div>
+                   
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+   
+
+   
+
+        <div class="row card-row">
+            <div class="col-4 vision-box-outter">
+                <div class="vision-block">
+                    <figure>
+                        <img src="./pic/svimag.svg" alt="policy-pic">
+                    </figure>
+                    <figcaption class="">
+                        <h5 class="title">Developing New-Age Web <br><span class="s-txt-b">Solutions</span></h5>
+
+                        <p class="txt">
+                          To build highly innovative and business-focused web and mobile solutions utilizing the newest technologies.
+                        </p>
+                    </figcaption>
+                </div>
+            </div>
+            <div class="col-4 vision-box-outter">
+                <div class="vision-block">
+                    <figure>
+                        <img src="./pic/builder-code-design-svgrepo-com.svg" alt="policy-pic">
+                    </figure>
+                    <figcaption>
+                        <h5 class="title">Commit to Complete <br><span class="s-txt-b">Transparency</span></h5>
+                        <p class="txt">
+                            To ensure complete transparency in the procedure and build trust by providing
+                            regular updates on the project.
+                        </p>
+                    </figcaption>
+                </div>
+            </div>
+            <div class="col-4 vision-box-outter">
+                <div class="vision-block">
+                    <figure>
+                        <img src="./pic/c-plusplus-svgrepo-com.svg" alt="policy-pic">
+                    </figure>
+                    <figcaption>
+                        <h5 class="title"><span class="s-txt-b">Equal Importance for </span> <br>Everyone</h5>
+                        <p class="txt">
+                          To prioritize all customers equally, regardless of the size, type, or criticality of their projects.
+                        </p>
+                    </figcaption>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+   <!--ABOUT-->
+
+   <!--Services-->
+   <section id="services" class="hero">
+    <div class="hero-container mt-5 sub-pg container-fluid d-flex align-items-center justify-content-between px-xs-0">
+        <div class="txt-bx">
+            <h1><span class="s-txt-a">Top-Notch </span> Web Development and Cloud Services.</h1>
+            <a class="btn btn-primary" href="#ServicesDescSec">Services</a>
+        </div>
+        <div class="img-bx">
+            <img src="./pic/freelance-work.png" alt="Software Developers">
+        </div>
+    </div>
+</section>
+   <section id="servicesAll" class="services-pgsec">
+    <div class="container">
+
+        <div class="">
+            
+            <h2 class="sec-heading">
+                
+                <span class="sub-heading">
+                    <span class="s-txt-a">Solutions for Businesses</span> <p style="font-size: 1.3rem;">As digital transformation accelerates, emerging technologies and processes are revolutionizing the industry, leading to efficient deliverables and enhanced scalability. The Software Development Life Cycle (SDLC) becomes more comprehensive with modern pipelines. Code2Nuage Infotech offers holistic solutions that drive digital transformation and technology migration. From specialized services like Cloud Migration,Web app services, mobile app services, managed services, maintenance, and support to the seamless integration of DevOps, DevSecOps, and performance engineering, Code2Nuage Infotech has established itself as a trailblazer in the digital transformation landscape.
+                    </p></span>
+            </h2>
+        </div>
+
+        <div class="row">
+
+         
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="/dot-net-development-company" class="icon-box Service-icon-box">
+                    <span class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/Microsoft_.NET_logo.svg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">.NET Core | .NET 7,8 | MVC | Web API</h6>
+                    <p class="descr">
+                        Our open source web framework of ASP.NET Core is efficient in modernizing the web
+                        applications. With this, it is easy to create services along with the mobile app backends. We can provide
+                        a plethora of benefits with our expertise in ASP.NET Core such as better performance and high security.
+                    </div>
+                </a>
+            </div>
+            <div class="d-flex col-lg-4 col-md-6">
+              <div href="/reactjs-development-company" class="icon-box Service-icon-box">
+                  <span href="#" class="link-icon">
+                      <i class="fas fa-external-link-alt"></i>
+                  </span>
+                  <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/React-icon.svg.png" alt="react" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                  </div>
+                  <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">React</h6>
+                  <p class="descr">
+                      React JS is an open-source, cross-platform JavaScript-based library that assists ReactJS developers in creating user interfaces for responsive web and single-page applications.
+                      We use the ReactJS front-end development library to build high-performance web applications.
+                  </p>
+                </div>
+          </div>
+          <div class="d-flex col-lg-4 col-md-6">
+            <div href="/angular-development-company-india" class="icon-box Service-icon-box">
+                <span class="link-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                </span>
+                <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic//ANGULAR LOGO.svg" alt="angular" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                </div>
+                <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">Angular</h6>
+                <p class="descr">
+                    Our AngularJs framework is top-notch among the rich internet applications. Our expertise in
+                    this field helps to make the data binding easier and faster. It is a tool to create highly testable
+                    applications and websites.
+                </p>
+              </div>
+        </div>
+           
+        <div class="d-flex col-lg-4 col-md-6">
+          <div href="/cloud-services" class="icon-box Service-icon-box">
+              <span href="#" class="link-icon">
+                  <i class="fas fa-external-link-alt"></i>
+              </span>
+              <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/AWS Amazon Web Services-01.svg" alt="cloud-services" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+              </div>
+              <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">Cloud Services<br><small>(Azure, AWS, GCP)</small></h6>
+              <p class="descr">
+                  The goal of enhancing the time efficiency and cost efficiency in business can be
+                  accomplished using our CLOUD SERVICES. With this, you can attain enormous benefits like cost reduction,
+                  scalability, flexibility, and access to automatic updates. Moreover, enriched with the capabilities of
+                  Azure and AWS, it will help to reduce the time delays, thus, making the business environment entirely
+                  productive.
+              </p>
+            </div>
+      </div>
+
+          
+           
+
+          <div class="d-flex col-lg-4 col-md-6">
+              <div href="/javascript-development-company" class="icon-box Service-icon-box">
+                  <span href="#" class="link-icon">
+                      <i class="fas fa-external-link-alt"></i>
+                  </span>
+                  <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/javascript.svg" alt="javascript" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                  </div>
+                  <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">JavaScript</h6>
+                  <p class="descr">
+                      JavaScript is a popular programming language for building multi-functional applications. We can create interactive web pages with JavaScript, which is why many popular websites are migrating to JavaScript.
+                      We can assist you in developing a robust, scalable, and secure application that will fully meet your requirements.
+                  </p>
+                </div>
+          </div>
+
+          <div class="d-flex col-lg-4 col-md-6">
+              <div href="/database-management-services" class="icon-box Service-icon-box">
+                  <span href="#" class="link-icon">
+                      <i class="fas fa-external-link-alt"></i>
+                  </span>
+                  <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/sql server logo.svg" alt="server" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                  </div>
+                  <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">Database<br><small>(SQL Server, MySQL, Mongo, DocumentDB)</small></h6>
+                  <p class="descr">
+                      We at Code2Nuage  assist organizations in developing an effective information strategy by providing database services. Our experts are capable of running all database platforms and applications,
+                      including SQL Server, MySQL, Mongo, DocumentDB, and others.
+                  </p>
+                </div>
+          </div>
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="/dot-net-maui-mobile-app-development" class="icon-box Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/android logo.svg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">MAUI</h6>
+                    <p class="descr">
+                        .NET MAUI is an evolution of Xamarin.Forms. It is used to develop native cross-platform mobile apps with .NET for Android, iOS, macOS, and Windows. Our expert .NET developers excel at utilizing .NET MAUI (Multi-Platform App UI) to build high-performance native &amp; cross-platform solutions for different platforms including desktop and mobile using the same code base to maximize efficiency and accelerate time-to-market.
+                    </p>
+                  </div>
+            </div>
+
+            
+
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="/c-sharp-development-company-india" class="icon-box Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/CSharp-01.svg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">C#</h6>
+                    <p class="descr">
+                        We especially work on C# language to create maintainable applications and reusable codes.
+                        Being the most powerful language in programming, it can create iOS, Android, and Windows phone native
+                        apps using Xamarin.
+                    </p>
+                </div>
+            </div>
+
+            
+
+           
+
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="#" class="icon-box no-link Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/CorelDraw 12-01.svg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">UI Controls<br><small>(Kendo UI, Telerik, Radzen, Syncfusion, MudBlazor, DevExpress)</small></h6>
+                    <p class="descr">
+                        Deliver responsive, interactive and high-performance line-of-business web applications by using different kind of UI controls such as Kendo UI, Telerik, Radzen, Syncfusion, MudBlazor, DevExpress for complex applications.
+                    </p>
+                </div>
+            </div>
+
+         
+
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="/software-testing-services" class="icon-box Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/testing.jpg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">Manual/Automation Testing</h6>
+                    <p class="descr">
+                        Empower your business for next-generation applications by implementing the best software testing methodologies. Our innovative approach eliminates bugs, reduces overall cycle time and minimizes errors. We offer a full range of manual and automated testing solutions that adhere to standard quality assurance best practices and processes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="/microservices" class="icon-box Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/microservices_in_net.png" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">.NET Microservices</h6>
+                    <p class="descr">
+                        Stay away from the monolithic hell and avoid complex architecture by choosing .NET microservice development - an effective development approach where large applications are divided into smaller loosely coupled modules (microservices), each designed to resolve a specific purpose. Each module has their own database that gives the availability of easy to test, scale, and extend the module.
+                    </p>
+                </div>
+            </div>
+
+            <div class="d-flex col-lg-4 col-md-6">
+                <div href="#" class="icon-box no-link Service-icon-box">
+                    <span href="#" class="link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <div class="icon" style="display: flex;justify-content: center;margin-bottom: 15px;" ><img src="./pic/Jira-01.svg" alt="ASP.NET" style="width: 100px; height: 100px; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <h6 class="title" style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">Project Management Tools<br><small>(Asana, Jira, Devops)</small></h6>
+                    <p class="descr">
+                        Project management tools are specially designed to assist an individual or team in organizing and managing their projects and tasks effectively. We use asana, JIRA and DevOps PM tools to help you and your team collaborate effectively and efficiently while working remotely.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section id="features" class="features-sec">
+  <div class="container">
+
+      <div class="">
+          <h3 class="sec-heading mt-5">
+               <span class="s-txt-a">Custom Solutions On Demand</span>
+              <span class="sub-heading d-block" style="font-size: 1.3rem;">
+                Mindful of the diverse and specific needs of our clients, Code2Nuage is dedicated to providing expert custom-tailored solutions to small, medium, and large enterprises.
+                 Our passionate, skilled, and experienced team excels in .NET web applications and MVC technology, ensuring exceptional customer satisfaction. Additionally, we specialize in cloud technologies, including AWS, Azure, and Google Cloud, enabling seamless scalability and efficiency.
+              </span>
+          </h3>
+      </div>
+
+      <div class="row mb-3">
+          <div class="col-lg-5 text-center">
+              <img src="./pic/product devolpment.jpg" class="img-fluid w-75" alt="Product Development">
+          </div>
+          <div class="col-lg-7 d-flex align-items-center">
+              <div class="txt-bx">
+                  <h4 class="font-weight-bold"><span class="s-txt-a">Product</span> Development</h4>
+                  <p class="mt-3 txt">
+                      Believing in the dire need of complying with the evolving software trends, we harness recent technologies
+                      and methods. Our key goals include understanding the requirements of clients and implementing them in an
+                      exact way to enhance the customer's experience. Amazingly, team efforts to build positive and reliable
+                      relations with vendors lead to the reduction of overhead cost and rapid delivery of project requirements.
+                  </p>
+                  <a class="btn btn-primary" href="/product-development-company-india">Know More</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="row mb-3 flex-row-reverse">
+          <div class="col-lg-5 text-center">
+              <img src="./pic/testing.jpg" class="img-fluid w-75" alt="Software Development">
+          </div>
+          <div class="col-lg-7 d-flex align-items-center">
+              <div class="txt-bx">
+                  <h4 class="font-weight-bold"><span class="s-txt-a">Software</span> Development</h4>
+                  <p class="mt-3 txt">
+                      Considering the significance of digitalization in changing lifestyles, our software development services
+                      in the form of designing, testing, programming, planning, and much more are framed and strategized
+                      according to customer's needs. We work hard to let our clients stay agile, innovative, and trendy in
+                      terms of business execution. Our efficient team efforts help to boost business productivity and overall
+                      value to set an example in the market.
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <div class="row mb-3">
+          <div class="col-lg-5 text-center">
+              <img src="./pic/Web devlopment.jpg" class="img-fluid w-75" alt="Web Development">
+          </div>
+          <div class="col-lg-7 d-flex align-items-center">
+              <div class="txt-bx">
+                  <h4 class="font-weight-bold"><span class="s-txt-a">Web</span> Development</h4>
+                  <p class="mt-3 txt">
+                      One of our key areas of web development comprises of consistent and creative efforts of the team to help the
+                      clients in building, creating, and maintaining websites. By introducing the aspect of customization, we
+                      believe in matching with the customer's needs and fulfilling on-demand solutions. Our expertise in web
+                      development helps the business to set cut above the rest in the digital world.
+                  </p>
+                  <a class="btn btn-primary" href="#">Know More</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="row mb-3 flex-row-reverse">
+          <div class="col-lg-5 text-center">
+              <img src="./pic/mobile-applications-and-mobile-development-concept.-flat-vector-illustration.-png_133093.jpg" class="img-fluid w-75" alt="Mobile App Development">
+          </div>
+          <div class="col-lg-7 d-flex align-items-center">
+              <div class="txt-bx">
+                  <h4 class="font-weight-bold"><span class="s-txt-a">Mobile App</span> Development</h4>
+                  <p class="mt-3 txt">
+                      With our prominent capability in Mobile App Development, we build native apps for Android, iOS, Windows,
+                      or Mac. Our bespoke solutions in context to mobile apps help the clients to build a stronger brand image
+                      by connecting with a larger audience. We put our best efforts to make it the most valuable tool for the
+                      client's modern business.
+                  </p>
+                  <a class="btn btn-primary" href="#">Know More</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="row mb-3">
+          <div class="col-lg-5 text-center">
+              <img src="./pic/bootstarp.jpg" class="img-fluid w-75" alt="Website Designing">
+          </div>
+          <div class="col-lg-7 d-flex align-items-center">
+              <div class="txt-bx">
+                  <h4 class="font-weight-bold"><span class="s-txt-a">Website Designing</span> Responsiveness</h4>
+                  <p class="mt-3 txt">
+                      Complying with our tagline, 'here's next level', we turn imagination into reality by providing
+                      the best Website designing services. Our professional team of web designers works to boost the
+                      responsiveness of customer's websites. Our aim of fitting in the digital world leads to the best SEO
+                      practice in context to website designing.
+                  </p>
+                  <a class="btn btn-primary" href="#">Know More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+   <!--Services-->
+   
+<footer class="footer">
+
+    <!-- Widgets - Bootstrap Brain Component -->
+    <section class="bg-light py-4 py-md-5 py-xl-8 border-top border-light">
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-lg-0 justify-content-xl-between">
+          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+            <div class="widget">
+              <a href="#!">
+                
+                <img src="./pic/logo.jpg" alt="Code2Nuage Infotech Logo" width="175" height="187">
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+            <div class="widget">
+              <h4 class="widget-title mb-4">Get in Touch</h4>
+              <address class="mb-4">sec-63 Noida (U.P)</address>
+              <p class="mb-1">
+                <a class="link-secondary text-decoration-none" href="tel:+91 8447261986">(91) 8447261986</a>
+              </p>
+              <p class="mb-0">
+                <a class="link-secondary text-decoration-none" href="mailto:demo@yourdomain.com">nuageinfotech.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+            <div class="widget">
+              <h4 class="widget-title mb-4">Learn More</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">About</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Contact</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Advertise</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Terms of Service</a>
+                </li>
+                <li class="mb-0">
+                  <a href="#!" class="link-secondary text-decoration-none">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 col-xl-4">
+            <div class="widget">
+              <h4 class="widget-title mb-4">Our Newsletter</h4>
+              <p class="mb-4">Subscribe to our newsletter to get our news & discounts delivered to you.</p>
+              <form action="#!">
+                <div class="row gy-4">
+                  <div class="col-12">
+                    <div class="input-group">
+                      <span class="input-group-text" id="email-newsletter-addon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg>
+                      </span>
+                      <input type="email" class="form-control" id="email-newsletter" value="" placeholder="Email Address" aria-label="email-newsletter" aria-describedby="email-newsletter-addon" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid mt-4">
+                      <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Copyright - Bootstrap Brain Component -->
+    <div class="bg-light py-4 py-md-5 py-xl-8 border-top border-light-subtle">
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-md-0 align-items-md-center">
+          <div class="col-xs-12 col-md-7 order-1 order-md-0">
+            <div class="copyright text-center text-md-start">
+              &copy; 2024. All Rights Reserved.
+            </div>
+            <div class="credits text-secondary text-center text-md-start mt-2 fs-8">
+              Built by <a href="https://nuageinfotech.com/" class="link-secondary text-decoration-none">Code2Nuage Infotech pvt limited</a> with <span class="text-primary">&#9829;</span>
+            </div>
+          </div>
+  
+          <div class="col-xs-12 col-md-5 order-0 order-md-1">
+            <div class="social-media-wrapper">
+              <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-md-end">
+                <li class="me-3 mx-3">
+                  <a href="#!" class="link-dark link-opacity-75-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="me-3 mx-3">
+                  <a href="#!" class="link-dark link-opacity-75-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                      <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="me-3 mx-3">
+                  <a href="#!" class="link-dark link-opacity-75-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#!" class="link-dark link-opacity-75-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
   </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('pageName').classList.add('d-none');
+          document.getElementById('services').classList.add('d-none');
+          document.getElementById('servicesAll').classList.add('d-none');
+          document.getElementById('features').classList.add('d-none');    
+          const serviceLink = document.querySelector('.nav-item.dropdown > .nav-link');
+            serviceLink.addEventListener('click', function(event) {
+                showServicePage();
+                
+            });
+        });
+       function showAboutPage() {
+            document.getElementById('pageName').classList.remove('d-none');
+            document.getElementById('carouselExampleIndicators').classList.add('d-none');
+            document.getElementById('Home-page').classList.add('d-none');
+            document.getElementById('services').classList.add('d-none');
+            document.getElementById('servicesAll').classList.add('d-none');
+          document.getElementById('features').classList.add('d-none');
+        }
+
+        function showHomePage() {
+            document.getElementById('carouselExampleIndicators').classList.remove('d-none');
+            document.getElementById('Home-page').classList.remove('d-none');
+            document.getElementById('pageName').classList.add('d-none');
+            document.getElementById('services').classList.add('d-none');
+            document.getElementById('servicesAll').classList.add('d-none');
+          document.getElementById('features').classList.add('d-none');
+          
+        }
+        function showServicePage(event) {
+            // event.preventDefault();
+            // event.stopPropagation();
+            document.getElementById('services').classList.remove('d-none');
+            document.getElementById('servicesAll').classList.remove('d-none');
+            document.getElementById('features').classList.remove('d-none');
+            document.getElementById('pageName').classList.add('d-none');
+            document.getElementById('carouselExampleIndicators').classList.add('d-none');
+            document.getElementById('Home-page').classList.add('d-none');
+           
+        }
+
+     
+  </script>
 </body>
+
 </html>
